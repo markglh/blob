@@ -33,13 +33,14 @@ The `BlobFinder` class is responsible for linking everything together, the class
 It may provide a cleaner separation of concerns by using Akka and implementing different Actors to encapsulate and scale the various algorithms, however this would be way beyond the scope of this basic implementation.
 
 ##Instructions
-###Pre-requisites
+####Pre-requisites
 Ensure, both SBT and Java are installed and configured.
 
-###Compiling
+####Compiling
 sbt compile
 
-###Running (Will provide results for all `CellPicker` implementations with average reads and boundaries, the example grid is loaded from grid.txt)
+####Running
+Will provide results for all `CellPicker` implementations with average reads and boundaries, the example grid is loaded from grid.txt
 sbt test
 
 Note that sbt run will not provide any useful results, only to recommend that you run the provided tests.
