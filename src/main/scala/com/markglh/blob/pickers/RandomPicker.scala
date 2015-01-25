@@ -7,7 +7,7 @@ import com.markglh.blob.grid.Grid.Cell
 import scala.util.Random
 
 /**
- * Simply picks any Cell outside of the current blob at random.
+ * Simply picks any [[Cell]] outside of the current known blob boundaries at random.
  */
 class RandomPicker extends CellPicker {
 
@@ -18,7 +18,7 @@ class RandomPicker extends CellPicker {
   }
 
   /**
-   * Find the next cell by blindly finding any cell in each direction then randomly picking one to return.
+   * Find the next cell by blindly finding any cell in each direction then picking one to return.
    * If no cells are found then we're done!
    */
   def findNext(grid: Grid, globalState: GlobalState): Option[Cell] = globalState.solutionState match {

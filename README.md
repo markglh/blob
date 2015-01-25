@@ -24,6 +24,14 @@ The `BlobFinder` class is responsible for linking everything together, the class
 * We create a new `GlobalState` for the search, updating the boundaries, visited cells (either blob or zero), and the number of reads.
 * The search ends when the `CellPicker` can't find any more viable `Cells`.
 
+##Assumptions
+* Each blob `Cell` is connected to at least one other blob `Cell`.
+* The grid.txt file contains no whitespace, other than newlines separating each row.
+* The grid will fit into memory
+
+##Potential Improvements
+It may provide a cleaner separation of concerns by using Akka and implementing different Actors to encapsulate and scale the various algorithms, however this would be way beyond the scope of this basic implementation.
+
 ##Instructions
 ###Pre-requisites
 Ensure, both SBT and Java are installed and configured.

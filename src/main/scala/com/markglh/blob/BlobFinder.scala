@@ -28,7 +28,7 @@ class BlobFinder(implicit val cellPicker: CellPicker, gridLoader: GridLoader) {
   }
 
   /**
-   * Creates a new GlobalState by comparing the current cell to all directions to ascertain whether the blob is larger.
+   * Creates a new [[GlobalState]] by comparing the current cell to all known boundaries to ascertain whether the blob is larger.
    */
   private def saveState(currentCell: Cell, globalState: GlobalState): GlobalState = {
     def calculateNewBlobBoundaries(left: Int, right: Int, top: Int, bottom: Int): SolutionState = {

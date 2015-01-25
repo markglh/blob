@@ -13,7 +13,7 @@ trait CellPicker {
    * Find the next possible cell in the grid.
    * @param grid The grid
    * @param globalState the current state
-   * @return The next cell or None if we've exhausted all viable blob cells.
+   * @return The next [[Cell]] or [[None]] if we've exhausted all viable blob cells.
    */
   def findNext(grid: Grid, globalState: GlobalState): Option[Cell]
 
