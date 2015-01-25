@@ -15,7 +15,7 @@ object State {
   }
 
   object GlobalState {
-    def apply(searchState: SearchState, solutionState: SolutionState) =
+    def apply(searchState: SearchState, solutionState: SolutionState): GlobalState =
       new GlobalState(searchState: SearchState, solutionState: SolutionState)
   }
 
