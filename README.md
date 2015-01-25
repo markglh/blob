@@ -49,6 +49,7 @@ Note that sbt run will not provide any useful results, only to recommend that yo
 ####Example Output
     Random Picker:
     Average reads: 73
+    
     Top: 1
     Left: 2
     Bottom: 7
@@ -57,6 +58,7 @@ Note that sbt run will not provide any useful results, only to recommend that yo
 
     Neighbours Picker
     Average reads: 49
+
     Top: 1
     Left: 2
     Bottom: 7

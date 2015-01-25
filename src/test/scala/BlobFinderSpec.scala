@@ -18,6 +18,7 @@ class BlobFinderSpec extends FlatSpec with Matchers {
     println(
       s"""Random Picker:
          |Average reads: ${multipleResults.sum / multipleResults.size}
+         |
          |Top: ${solution.solutionState.get.top}
          |Left: ${solution.solutionState.get.left}
          |Bottom: ${solution.solutionState.get.bottom}
@@ -44,6 +45,7 @@ class BlobFinderSpec extends FlatSpec with Matchers {
     println(
       s"""Neighbours Picker
          |Average reads: ${multipleResults.sum / multipleResults.size}
+         |
          |Top: ${solution.solutionState.get.top}
          |Left: ${solution.solutionState.get.left}
          |Bottom: ${solution.solutionState.get.bottom}
