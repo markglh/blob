@@ -40,9 +40,40 @@ Ensure, both SBT and Java are installed and configured.
 sbt compile
 
 ####Running
-Will provide results for all `CellPicker` implementations with average reads and boundaries, the example grid is loaded from grid.txt
 sbt test
 
+This will provide results for all `CellPicker` implementations with average reads and boundaries, the example grid is loaded from grid.txt
+
 Note that sbt run will not provide any useful results, only to recommend that you run the provided tests.
+
+####Example Output
+    Random Picker:
+    Average reads: 73
+    Top: 1
+    Left: 2
+    Bottom: 7
+    Right: 6
+    Reads: 73
+
+    Neighbours Picker
+    Average reads: 49
+    Top: 1
+    Left: 2
+    Bottom: 7
+    Right: 6
+    Reads: 49
+
+    [info] BlobFinderSpec:
+    [info] Random Picker
+    [info] - should find the blob by randomly picking cells
+    [info] Neighbour Picker
+    [info] - should find the blob by visiting neighbour cells
+    [info] ScalaTest
+    [info] Run completed in 706 milliseconds.
+    [info] Total number of tests run: 2
+    [info] Suites: completed 1, aborted 0
+    [info] Tests: succeeded 2, failed 0, canceled 0, ignored 0, pending 0
+    [info] All tests passed.
+    [info] Passed: Total 2, Failed 0, Errors 0, Passed 2
 
 
