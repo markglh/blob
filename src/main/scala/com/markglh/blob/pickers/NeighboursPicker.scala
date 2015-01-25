@@ -11,7 +11,7 @@ import scala.util.Random
  */
 class NeighboursPicker extends CellPicker {
 
-  private def findRandomCellOutsideBoundary(grid: Grid, globalState: GlobalState): Option[Cell] = {
+  private def findViableNeighbourCell(grid: Grid, globalState: GlobalState): Option[Cell] = {
     val unvisitedBlobNeighbours = globalState.searchState.blobCells.
       flatMap { cell => findCellNeighboursWithinGrid(cell, grid)}. //find neighbours
       filter(grid.getUnvisitedCells(globalState.searchState).contains) //filter visited cells
@@ -35,6 +35,6 @@ class NeighboursPicker extends CellPicker {
    */
   def findNext(grid: Grid, globalState: GlobalState): Option[Cell] = globalState.solutionState match {
     case None => Random.shuffle(grid.getUnvisitedCells(globalState.searchState)).headOption
-    case Some(solutionState) => findRandomCellOutsideBoundary(grid, globalState)
+    case Some(solutionState) => findViableNeighbourCell(grid, globalState)
   }
 }
