@@ -27,7 +27,8 @@ The `BlobFinder` class is responsible for linking everything together, the class
 ##Assumptions
 * Each blob `Cell` is connected to at least one other blob `Cell`.
 * The grid.txt file contains no whitespace, other than newlines separating each row.
-* The grid will fit into memory
+* The grid will fit into memory.
+* It is not ok to filter out 0 `Cells` from the `Grid`, or pre-select blob `Cells` in the `CellPicker`.
 
 ##Potential Improvements
 It may provide a cleaner separation of concerns by using Akka and implementing different Actors to encapsulate and scale the various algorithms, however this would be way beyond the scope of this basic implementation.
@@ -47,31 +48,36 @@ This will provide results for all `CellPicker` implementations with average read
 Note that sbt run will not provide any useful results, only to recommend that you run the provided tests.
 
 ####Example Output
+    -------------------------------
     Random Picker:
-    Average reads: 73
-    
-    Top: 1
-    Left: 2
-    Bottom: 7
-    Right: 6
-    Reads: 73
-
-    Neighbours Picker
-    Average reads: 49
+    Min reads: 68
+    Max Reads: 75
+    Average reads: 72
 
     Top: 1
     Left: 2
     Bottom: 7
     Right: 6
-    Reads: 49
+    -------------------------------
 
+    -------------------------------
+    Neighbours Picker:
+    Min reads: 37
+    Max Reads: 50
+    Average reads: 41
+
+    Top: 1
+    Left: 2
+    Bottom: 7
+    Right: 6
+    -------------------------------
     [info] BlobFinderSpec:
     [info] Random Picker
     [info] - should find the blob by randomly picking cells
     [info] Neighbour Picker
     [info] - should find the blob by visiting neighbour cells
     [info] ScalaTest
-    [info] Run completed in 706 milliseconds.
+    [info] Run completed in 641 milliseconds.
     [info] Total number of tests run: 2
     [info] Suites: completed 1, aborted 0
     [info] Tests: succeeded 2, failed 0, canceled 0, ignored 0, pending 0

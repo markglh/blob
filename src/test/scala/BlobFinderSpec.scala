@@ -16,15 +16,18 @@ class BlobFinderSpec extends FlatSpec with Matchers {
     val solution = blobFinder.findBlob()
 
     println(
-      s"""Random Picker:
+      s"""
+         |-------------------------------
+         |Random Picker:
+         |Min reads: ${multipleResults.min}
+         |Max Reads: ${multipleResults.max}
          |Average reads: ${multipleResults.sum / multipleResults.size}
          |
          |Top: ${solution.solutionState.get.top}
          |Left: ${solution.solutionState.get.left}
          |Bottom: ${solution.solutionState.get.bottom}
          |Right: ${solution.solutionState.get.right}
-         |Reads: ${solution.searchState.reads}
-       """.stripMargin)
+         |-------------------------------""".stripMargin)
 
     solution.solutionState should be('defined)
     solution.solutionState.get.top should equal(1)
@@ -43,15 +46,18 @@ class BlobFinderSpec extends FlatSpec with Matchers {
     val solution = blobFinder.findBlob()
 
     println(
-      s"""Neighbours Picker
+      s"""
+         |-------------------------------
+         |Neighbours Picker:
+         |Min reads: ${multipleResults.min}
+         |Max Reads: ${multipleResults.max}
          |Average reads: ${multipleResults.sum / multipleResults.size}
          |
          |Top: ${solution.solutionState.get.top}
          |Left: ${solution.solutionState.get.left}
          |Bottom: ${solution.solutionState.get.bottom}
          |Right: ${solution.solutionState.get.right}
-         |Reads: ${solution.searchState.reads}
-       """.stripMargin)
+         |-------------------------------""".stripMargin)
 
     solution.solutionState should be('defined)
     solution.solutionState.get.top should equal(1)

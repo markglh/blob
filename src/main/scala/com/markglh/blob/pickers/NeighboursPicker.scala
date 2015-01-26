@@ -1,6 +1,6 @@
 package com.markglh.blob.pickers
 
-import com.example.State.GlobalState
+import com.example.State.{SearchState, GlobalState}
 import com.markglh.blob.grid.Grid
 import com.markglh.blob.grid.Grid.Cell
 
@@ -34,7 +34,7 @@ class NeighboursPicker extends CellPicker {
    * Find the next Cell by picking unvisited Cells surrounding the visited ones.
    */
   def findNext(grid: Grid, globalState: GlobalState): Option[Cell] = globalState.solutionState match {
-    case None => Random.shuffle(grid.getUnvisitedCells(globalState.searchState)).headOption
+    case None => grid.pickRandomCell(globalState.searchState)
     case Some(solutionState) => findViableNeighbourCell(grid, globalState)
   }
 }

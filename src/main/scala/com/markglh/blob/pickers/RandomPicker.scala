@@ -4,8 +4,6 @@ import com.example.State.{GlobalState, SolutionState}
 import com.markglh.blob.grid.Grid
 import com.markglh.blob.grid.Grid.Cell
 
-import scala.util.Random
-
 /**
  * Simply picks any [[Cell]] outside of the current known blob boundaries at random.
  */
@@ -22,7 +20,7 @@ class RandomPicker extends CellPicker {
    * If no cells are found then we're done!
    */
   def findNext(grid: Grid, globalState: GlobalState): Option[Cell] = globalState.solutionState match {
-    case None => Random.shuffle(grid.getUnvisitedCells(globalState.searchState)).headOption
+    case None => grid.pickRandomCell(globalState.searchState)
     case Some(solutionState) => findRandomCellOutsideBoundary(grid.getUnvisitedCells(globalState.searchState), solutionState)
   }
 }
